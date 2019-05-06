@@ -1,0 +1,45 @@
+// Q2_18l1085.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+template <typename a>
+class Pair{
+	a values[2];
+public:
+	Pair(a v1,a v2){
+		values[0]=v1;
+		values[1]=v2;
+	}
+	a GetMax(){
+		if(values[0]>values[1]){
+			return values[0];
+		}
+		else{
+			return values[1];
+		}
+	}
+	a GetMin(){
+		if(values[0]<values[1]){
+			return values[0];
+		}
+		else{
+			return values[1];
+		}
+	}
+	friend ostream &operator<<(ostream &out,const Pair &obj){
+		out<<obj.values[0]<<" "<<obj.values[1]<<endl;
+		return out;
+	}
+};
+int _tmain(int argc, _TCHAR* argv[])
+{
+	Pair <double> myobject(1.012,1.01234);
+	cout<<myobject.GetMax()<<endl;
+	cout<<myobject.GetMin()<<endl;
+	cout<<myobject<<endl; // << operator in pairs should be overloaded (inline)
+
+	return 0;
+}
+
