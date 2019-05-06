@@ -1,0 +1,54 @@
+// ConsoleApplication3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+template <typename t,typename t2>
+t GetMax(t x,t y){
+	if(x>y){
+		return x;
+	}
+	else{
+		return y;
+	}
+}
+template <typename t1,typename t3>
+t1 GetMin(t1 x,t1 y){
+		if(x<y){
+			return x;
+		}
+		else{
+			return y;
+		}
+	}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	/*int i=5,j=6,k;
+	long l=10, m=5, n;
+	k=GetMax<int>(i,j);
+	n=GetMin<long>(l,m);
+	cout << k << endl;
+	cout << n << endl;*/
+	 
+  char i='Z';
+  int  j=6, k;
+  long l=10, m=5, n;
+  k=GetMax<int,long>(i,m);
+  n=GetMin<int,char>(j,l);
+  cout << k << endl;
+  cout << n << endl;
+
+
+  //On removing <int,long> and <int ,char>
+ /* Error	1	error C2782: 't GetMax(t,t)' : template parameter 't' is ambiguous	c:\users\lab\documents\visual studio 2012\projects\consoleapplication3\consoleapplication3\consoleapplication3.cpp	38
+Error	2	error C2782: 't1 GetMin(t1,t1)' : template parameter 't1' is ambiguous	c:\users\lab\documents\visual studio 2012\projects\consoleapplication3\consoleapplication3\consoleapplication3.cpp	39
+	3	IntelliSense: no instance of function template "GetMax" matches the argument list
+            argument types are: (char, long)	c:\Users\Lab\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp	38
+	4	IntelliSense: no instance of function template "GetMin" matches the argument list
+            argument types are: (int, long)	c:\Users\Lab\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp	39
+			*/
+	return 0;
+}
+
